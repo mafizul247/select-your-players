@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelectedPlayers = () => {
+const SelectedPlayers = ({purchasePlayers}) => {
     return (
         <div>
             Selected Players

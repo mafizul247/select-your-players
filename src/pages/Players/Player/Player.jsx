@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser, FaFlag } from 'react-icons/fa';
 
-const Player = ({ player, setBalance, balance }) => {
+const Player = ({ player, setBalance, balance, purchasePlayers, setPurchasePlayers }) => {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleSelected = (player) => {
@@ -11,7 +11,8 @@ const Player = ({ player, setBalance, balance }) => {
             return;
         }else {
             setIsSelected(!isSelected);
-            setBalance(balance - playerPrice)
+            setBalance(balance - playerPrice);
+            setPurchasePlayers([...purchasePlayers, player])
         }
 
     }

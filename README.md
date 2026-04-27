@@ -13,16 +13,6 @@ This is a React.js application template configured with Tailwind CSS and DaisyUI
 
 To get started, clone this repository and install the dependencies.
 
-```sh
-# Clone the repository
-git clone https://github.com/your-username/react-template.git
-
-# Navigate to the project directory
-cd react-template
-
-# Install dependencies
-npm install
-```
 
 ## Usage
 
