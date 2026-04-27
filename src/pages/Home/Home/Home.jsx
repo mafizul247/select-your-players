@@ -2,6 +2,9 @@ import React, { Suspense, useEffect, useState } from 'react';
 import AvabilePlayers from '../../Players/AvabilePlayers/AvabilePlayers';
 import SelectedPlayers from '../../Players/SelectedPlayers/SelectedPlayers';
 import Header from '../../Shared/Header/Header';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 /* const featchPlayers = async () => {
     const res = await fetch("/players.json")
@@ -20,14 +23,16 @@ const Home = () => {
         const playerPrice = parseInt(player.price.split("USD").join("").split(",").join(""));
         if (balance < playerPrice) {
             alert("Not Enought Coin");
+            toast.error("Not Enough Coin!")
             return;
         } else if (purchasePlayers.length >= 6) {
-            alert("You have purchase 6 players");
+            toast.error("You Purchase 6 Players!");
             return;
         } else {
             // setIsSelected(!isSelected);
             setBalance(balance - playerPrice);
             setPurchasePlayers([...purchasePlayers, player])
+            toast(`Wow you have purchase ${player.player_name}`)
         }
 
     }
@@ -48,10 +53,11 @@ const Home = () => {
          playersData();
      }, []); */
 
-    console.log(purchasePlayers)
+    // console.log(purchasePlayers)
 
     return (
         <>
+        <ToastContainer />
             <Header balance={balance} />
             <div className='pt-20'>
                 <div className='flex justify-between items-center my-2'>
