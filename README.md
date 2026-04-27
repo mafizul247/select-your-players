@@ -1,17 +1,24 @@
-# React Application Template
+# Hire Players
 
-This is a React.js application template configured with Tailwind CSS and DaisyUI, providing a clean and modern setup for building web applications efficiently.
+🚀 **Live Website Netlify:** https://statuesque-blini-5c8f15.netlify.app/  
+🚀 **Live Website Surge:** panicky-temper.surge.sh  
+💻 **GitHub Repository:** https://github.com/mafizul247/select-your-players.git  
+
+Hire Players is a modern React.js web application designed to browse and hire players efficiently. It features a clean UI, responsive design, and smooth user experience.
 
 ## Features
 
-- **React.js** – Modern JavaScript library for building user interfaces.
-- **Tailwind CSS** – Utility-first CSS framework for rapid UI development.
-- **DaisyUI** – A Tailwind CSS plugin for beautiful and accessible components.
-- **Vite** – Fast and optimized build tool for modern frontend development.
+- ⚛️ **React.js** – Modern JavaScript library for building user interfaces  
+- 🎨 **Tailwind CSS** – Utility-first CSS framework for rapid UI development  
+- 🌼 **DaisyUI** – Prebuilt Tailwind components for faster design  
+- ⚡ **Vite** – Fast and optimized development environment  
+- 🔔 **React Toastify** – Elegant notifications and alerts  
+- ⭐ **Font Awesome** – Rich icon library for enhanced UI  
 
 ## Installation
 
 To get started, clone this repository and install the dependencies.
+
 
 
 ## Usage
@@ -19,8 +26,9 @@ To get started, clone this repository and install the dependencies.
 Run the development server to start the application:
 
 ```sh
-npm run dev
-```
+git clone https://github.com/mafizul247/select-your-players.git
+cd select-your-players
+npm install
 
 The application will be available at `http://localhost:5173/` (default Vite port).
 
