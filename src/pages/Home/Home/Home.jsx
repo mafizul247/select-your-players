@@ -34,7 +34,13 @@ const Home = () => {
             setPurchasePlayers([...purchasePlayers, player])
             toast(`Wow you have purchase ${player.player_name}`)
         }
+    }
 
+    const handleRemovePlayer = (player) => {
+        // console.log(purchasePlayers)
+        const remaining = purchasePlayers.filter(pPlayer => pPlayer.id !== player.id);
+        // console.log(remaining)
+        setPurchasePlayers(remaining);
     }
 
     useEffect(() => {
@@ -73,7 +79,8 @@ const Home = () => {
                             players={players}
                             handleSelected={handleSelected} />
                     </Suspense> : <SelectedPlayers
-                        purchasePlayers={purchasePlayers} />
+                        purchasePlayers={purchasePlayers}
+                        handleRemovePlayer={handleRemovePlayer} />
                 }
             </div>
         </>
