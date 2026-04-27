@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from '../Player/Player';
 
-const AvabilePlayers = ({ players, setBalance, balance, purchasePlayers, setPurchasePlayers }) => {
+const AvabilePlayers = ({ players, handleSelected }) => {
     // console.log(players);
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8'>
@@ -9,10 +9,7 @@ const AvabilePlayers = ({ players, setBalance, balance, purchasePlayers, setPurc
                 players.map(player => <Player
                     key={player.id}
                     player={player}
-                    setBalance={setBalance}
-                    balance={balance}
-                    purchasePlayers={purchasePlayers}
-                    setPurchasePlayers={setPurchasePlayers} />)
+                    handleSelected={handleSelected} />)
             }
         </div>
     );

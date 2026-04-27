@@ -12,22 +12,25 @@ const Home = () => {
     // const plaryersPromise = featchPlayers();
     const [players, setPlayers] = useState([]);
     const [toggle, setToggle] = useState(true);
-    // const [isSelected, setIsSelected] = useState(false);
+    const [isSelected, setIsSelected] = useState(false);
     const [balance, setBalance] = useState(600000000);
     const [purchasePlayers, setPurchasePlayers] = useState([]);
 
-    /* const handleSelected = (player) => {
+    const handleSelected = (player) => {
         const playerPrice = parseInt(player.price.split("USD").join("").split(",").join(""));
         if (balance < playerPrice) {
             alert("Not Enought Coin");
             return;
+        } else if (purchasePlayers.length >= 6) {
+            alert("You have purchase 6 players");
+            return;
         } else {
-            setIsSelected(!isSelected);
+            // setIsSelected(!isSelected);
             setBalance(balance - playerPrice);
             setPurchasePlayers([...purchasePlayers, player])
         }
 
-    } */
+    }
 
     useEffect(() => {
         fetch('/players.json')
@@ -52,7 +55,7 @@ const Home = () => {
             <Header balance={balance} />
             <div className='pt-20'>
                 <div className='flex justify-between items-center my-2'>
-                    <h4 className="text-xl font-bold">{toggle ? "Available Players" : "Selected Players"}</h4>
+                    <h4 className="text-xl font-bold">{toggle ? "Available Players" : `Selected Players (${purchasePlayers.length}/6)`}</h4>
                     <div className='font-bold'>
                         <button onClick={() => setToggle(!toggle)} className={`border-r-0 border-2 py-3 px-8 rounded-l-3xl ${toggle ? "bg-lime-300" : ""}`}>Available</button>
                         <button onClick={() => setToggle(!toggle)} className={`border-l-0 border-2 py-3 px-8 rounded-r-3xl ${toggle ? "" : "bg-lime-300"}`}>Selected ({purchasePlayers.length})</button>
@@ -62,10 +65,7 @@ const Home = () => {
                     toggle ? <Suspense fallback={<p>Loading...</p>} >
                         <AvabilePlayers
                             players={players}
-                            setBalance={setBalance}
-                            balance={balance}
-                            purchasePlayers={purchasePlayers}
-                            setPurchasePlayers={setPurchasePlayers} />
+                            handleSelected={handleSelected} />
                     </Suspense> : <SelectedPlayers
                         purchasePlayers={purchasePlayers} />
                 }

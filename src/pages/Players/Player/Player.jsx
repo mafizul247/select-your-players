@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FaUser, FaFlag } from 'react-icons/fa';
 
-const Player = ({ player, setBalance, balance, purchasePlayers, setPurchasePlayers }) => {
+const Player = ({ player, handleSelected }) => {
     const [isSelected, setIsSelected] = useState(false);
 
-    const handleSelected = (player) => {
+    /* const handleSelected = (player) => {
         const playerPrice = parseInt(player.price.split("USD").join("").split(",").join(""));
         if (balance < playerPrice) {
             alert("Not Enought Coin");
@@ -15,7 +15,7 @@ const Player = ({ player, setBalance, balance, purchasePlayers, setPurchasePlaye
             setPurchasePlayers([...purchasePlayers, player])
         }
 
-    }
+    } */
 
     return (
         <div className="card bg-base-100 w-96 shadow-sm p-4 border-2">
@@ -42,7 +42,10 @@ const Player = ({ player, setBalance, balance, purchasePlayers, setPurchasePlaye
                 </div>
                 <div className='flex justify-between items-center'>
                     <p><b>Price: ${player.price}</b></p>
-                    <button disabled={isSelected} onClick={() => handleSelected(player)} className={`btn btn-sm `}>{isSelected ? "Selected" : "Choose Player"}</button>
+                    <button disabled={isSelected} onClick={() => {
+                        handleSelected(player); 
+                        setIsSelected(!isSelected)
+                        }} className={`btn btn-sm `}>{isSelected ? "Selected" : "Choose Player"}</button>
                 </div>
             </div>
         </div>
