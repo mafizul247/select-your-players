@@ -1,7 +1,7 @@
 # Hire Players
 
 🚀 **Live Website Netlify:** https://statuesque-blini-5c8f15.netlify.app/  
-🚀 **Live Website Surge:** panicky-temper.surge.sh  
+🚀 **Live Website Surge:** http://panicky-temper.surge.sh/  
 💻 **GitHub Repository:** https://github.com/mafizul247/select-your-players.git  
 
 Hire Players is a modern React.js web application designed to browse and hire players efficiently. It features a clean UI, responsive design, and smooth user experience.
